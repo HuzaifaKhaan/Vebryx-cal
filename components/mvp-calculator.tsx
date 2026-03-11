@@ -781,7 +781,7 @@ export function MVPCalculator() {
                     disabled={!isFormValid || sending}
                     className="w-full bg-primary hover:bg-primary/90 cursor-pointer text-primary-foreground gap-2 text-sm h-10"
                   >
-                    {sending ? <span className="flex items-center gap-2"><Loader className="animate-spin"/>Sending...</span> : "See My Estimate"}
+                    {sending ? <span className="flex items-center gap-2"><Loader className="animate-spin"/>Calculating...</span> : "See My Estimate"}
                     {!sending && <ArrowRightIcon />}
                   </Button>
                 </div>
@@ -869,7 +869,7 @@ export function MVPCalculator() {
         <div className="px-5 sm:px-8 py-4 sm:py-6 border-t border-border/50 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div className="flex items-center gap-2 order-2 sm:order-1">
             <a
-              href="#"
+              href="https://calendly.com/vebryx-free-consultation/30min"
               className="text-primary text-xs sm:text-sm font-medium cursor-pointer hover:underline"
             >
               Consult Estimation Expert
