@@ -796,7 +796,7 @@ export function MVPCalculator() {
                     disabled={!isFormValid || sending}
                     className="w-full bg-primary hover:bg-primary/90 cursor-pointer text-primary-foreground gap-2 text-sm h-10"
                   >
-                    {sending ? <span className="flex items-center gap-2"><Loader className="animate-spin"/>Calculating...</span> : "See My Estimate"}
+                    {sending ? <span className="flex items-center gap-2"><Loader className="animate-spin"/>Calculating...</span> : "Calculate My Estimate"}
                     {!sending && <ArrowRightIcon />}
                   </Button>
                 </div>
