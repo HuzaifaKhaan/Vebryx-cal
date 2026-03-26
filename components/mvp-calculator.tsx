@@ -378,6 +378,7 @@ export function MVPCalculator() {
   // Step 5 sub-states
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
+  const [userPhone, setUserPhone] = useState("");
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
   const [sendError, setSendError] = useState("");
@@ -421,6 +422,7 @@ export function MVPCalculator() {
 
     setUserName("");
     setUserEmail("");
+    setUserPhone("");
     setFormSubmitted(false);
     setSending(false);
     setSendError("");
@@ -513,7 +515,7 @@ export function MVPCalculator() {
 
       setFormSubmitted(true);
     } catch (error) {
-      console.error("EmailJS Error:", error);
+      console.log("EmailJS Error:", error);
 
       setSendError("Email failed to send. Please check EmailJS configuration.");
     } finally {
@@ -753,7 +755,7 @@ export function MVPCalculator() {
                       type="text"
                       value={userName}
                       onChange={(e) => setUserName(e.target.value)}
-                      placeholder="e.g. Ahmed Khan"
+                      placeholder="e.g. Oliver Noh"
                       className="w-full px-4 py-2.5 rounded-xl border border-border bg-muted/40 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition"
                     />
                   </div>
@@ -767,7 +769,20 @@ export function MVPCalculator() {
                       type="email"
                       value={userEmail}
                       onChange={(e) => setUserEmail(e.target.value)}
-                      placeholder="e.g. ahmed@example.com"
+                      placeholder="e.g. oliver@example.com"
+                      className="w-full px-4 py-2.5 rounded-xl border border-border bg-muted/40 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition"
+                    />
+                  </div>
+
+                    <div className="space-y-1.5">
+                    <label className="text-sm font-medium text-foreground flex items-center gap-1.5">
+                      <UserIcon /> Phone Number
+                    </label>
+                    <input
+                      type="number"
+                      value={userPhone}
+                      onChange={(e) => setUserPhone(e.target.value)}
+                      placeholder="e.g. +44 7448 635310"
                       className="w-full px-4 py-2.5 rounded-xl border border-border bg-muted/40 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition"
                     />
                   </div>
@@ -827,6 +842,12 @@ export function MVPCalculator() {
                         <span className="text-muted-foreground">Email</span>
                         <span className="font-medium truncate max-w-[120px]">
                           {userEmail}
+                        </span>
+                      </div>
+                        <div className="flex justify-between">
+                        <span className="text-muted-foreground">Phone Number</span>
+                        <span className="font-medium truncate max-w-[120px]">
+                          {userPhone}
                         </span>
                       </div>
                       <div className="flex justify-between">
