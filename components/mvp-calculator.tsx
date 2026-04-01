@@ -890,7 +890,7 @@ export function MVPCalculator() {
         <div className="px-5 sm:px-8 py-4 sm:py-6 border-t border-border/50 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div className="flex items-center gap-2 order-2 sm:order-1">
             <a
-              href="https://calendly.com/vebryx-free-consultation/30min"
+              href="https://calendly.com/vebryx-free-mvp-strategy-call/30min"
               className="text-primary text-xs sm:text-sm font-medium cursor-pointer hover:underline"
             >
               Consult Estimation Expert
