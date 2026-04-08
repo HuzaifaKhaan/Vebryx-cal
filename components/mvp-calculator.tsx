@@ -25,14 +25,14 @@ interface Feature {
 }
 
 const features: Feature[] = [
-  { id: "auth", name: "Authentication", baseCost: 800, timeWeeks: 1.5 },
-  { id: "payments", name: "Payments", baseCost: 950, timeWeeks: 1.5 },
+  { id: "auth", name: "Authentication", baseCost: 800, timeWeeks: 1 },
+  { id: "payments", name: "Payments", baseCost: 950, timeWeeks: 1 },
   { id: "notifications", name: "Notifications", baseCost: 600, timeWeeks: 1 },
-  { id: "chat", name: "Real-time Chat", baseCost: 1400, timeWeeks: 2.5 },
-  { id: "analytics", name: "Analytics", baseCost: 1100, timeWeeks: 2 },
-  { id: "ai", name: "AI Features", baseCost: 2200, timeWeeks: 4 },
-  { id: "admin", name: "Admin Panel", baseCost: 1200, timeWeeks: 2 },
-  { id: "integrations", name: "API Integration", baseCost: 900, timeWeeks: 2 },
+  { id: "chat", name: "Real-time Chat", baseCost: 1400, timeWeeks: 1 },
+  { id: "analytics", name: "Analytics", baseCost: 1100, timeWeeks: 1 },
+  { id: "ai", name: "AI Features", baseCost: 2200, timeWeeks: 1 },
+  { id: "admin", name: "Admin Panel", baseCost: 1200, timeWeeks: 1 },
+  { id: "integrations", name: "API Integration", baseCost: 900, timeWeeks: 1 },
 ];
 
 const timelines = [
@@ -448,9 +448,10 @@ export function MVPCalculator() {
       baseCost * platformMultiplier * projectMultiplier * timelineMultiplier,
     );
     const totalWeeks = Math.round(
-      (baseTime * (platform === "both" ? 1.2 : 0.5)) / timelineMultiplier,
+      (baseTime * (platform === "both" ? 1 : 0.5)) / timelineMultiplier,
     );
     console.log(baseTime);
+    console.log(timelineMultiplier);
     return {
       cost: totalCost,
       minCost: Math.round(totalCost * 0.85),
