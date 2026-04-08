@@ -39,20 +39,20 @@ const timelines = [
   {
     id: "relaxed",
     name: "Relaxed",
-    description: "3-4 months",
-    multiplier: 0.9,
+    description: "2-3 months",
+    multiplier: 0.6,
   },
   {
     id: "standard",
     name: "Standard",
-    description: "2-3 months",
-    multiplier: 1,
+    description: "1-2 months",
+    multiplier: 0.7,
   },
   {
     id: "fast",
     name: "Fast Track",
-    description: "1-2 months",
-    multiplier: 1.3,
+    description: "2-4 weeks",
+    multiplier: 0.9,
   },
 ];
 
@@ -430,7 +430,7 @@ export function MVPCalculator() {
 
   const calculateEstimate = () => {
     const platformMultiplier =
-      platform === "both" ? 2.2 : platform === "mobile" ? 1.5 : 1;
+      platform === "both" ? 1.7 : platform === "mobile" ? 1.2 : 0.5;
     const projectMultiplier =
       projectType === "full" ? 1.5 : projectType === "update" ? 0.7 : 1;
     const timelineMultiplier =
