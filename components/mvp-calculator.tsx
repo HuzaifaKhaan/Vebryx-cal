@@ -443,12 +443,14 @@ export function MVPCalculator() {
       (sum, fId) => sum + (features.find((f) => f.id === fId)?.timeWeeks || 0),
       0,
     );
+    
     const totalCost = Math.round(
       baseCost * platformMultiplier * projectMultiplier * timelineMultiplier,
     );
     const totalWeeks = Math.round(
-      (baseTime * (platform === "both" ? 1.5 : 1)) / timelineMultiplier,
+      (baseTime * (platform === "both" ? 1.2 : 0.5)) / timelineMultiplier,
     );
+    console.log(baseTime);
     return {
       cost: totalCost,
       minCost: Math.round(totalCost * 0.85),
