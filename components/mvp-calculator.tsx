@@ -526,6 +526,8 @@ export function MVPCalculator() {
   const isFormValid =
     userName.trim().length > 0 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(userEmail);
 
+    
+
   return (
     <div className="w-full bg-[#E5ECFB] rounded-xl max-w-6xl mx-auto px-4 sm:px-0">
       <div className="bg-card rounded-2xl shadow-sm border border-border/50 overflow-hidden">
@@ -715,6 +717,7 @@ export function MVPCalculator() {
                     description={t.description}
                   />
                 ))}
+                
               </div>
             </div>
           )}
